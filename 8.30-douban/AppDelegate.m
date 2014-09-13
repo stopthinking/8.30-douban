@@ -1,10 +1,4 @@
-//
-//  AppDelegate.m
-//  8.30-douban
-//
-//  Created by 4DWORK on 12-8-30.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
-//
+
 
 #import "AppDelegate.h"
 
@@ -25,9 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
+    
     self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
-    self.window.rootViewController = self.viewController;
+    UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    self.window.rootViewController = nc;
     [self.window makeKeyAndVisible];
     return YES;
 }
